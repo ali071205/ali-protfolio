@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skills &amp; Tech | A. AHMAD</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#00ffaa",
+                        "surface-bright": "#3a3939",
+                        "primary-fixed-dim": "#00e296",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#002112",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "primary-fixed": "#4dffb1",
+                        "on-primary-fixed-variant": "#005233",
+                        "outline": "#849589",
+                        "on-background": "#e5e2e1",
+                        "on-primary-container": "#007149",
+                        "background": "#131313",
+                        "on-primary": "#003822",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353534",
+                        "surface-dim": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "secondary-container": "#1a4e50",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary": "#f6fff6",
+                        "on-secondary-fixed": "#002021",
+                        "tertiary-container": "#e2dfdf",
+                        "secondary": "#9ecfd1",
+                        "inverse-primary": "#006c46",
+                        "on-secondary-fixed-variant": "#1a4e50",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary": "#313030",
+                        "surface": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-container": "#636262",
+                        "surface-tint": "#00e296",
+                        "on-secondary-container": "#8dbec0",
+                        "on-secondary": "#003739",
+                        "surface-variant": "#353534",
+                        "on-surface-variant": "#b9cbbd",
+                        "on-error": "#690005",
+                        "surface-container": "#201f1f",
+                        "outline-variant": "#3a4a40",
+                        "secondary-fixed-dim": "#9ecfd1",
+                        "secondary-fixed": "#b9ecee",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary": "#fffcfb",
+                        "surface-container-lowest": "#0e0e0e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-padding-desktop": "40px",
+                        "stack-sm": "12px",
+                        "container-padding-mobile": "20px",
+                        "stack-lg": "48px",
+                        "stack-md": "24px",
+                        "base": "8px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.1", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .mint-glow {
+            box-shadow: 0 0 20px rgba(0, 255, 170, 0.1);
+        }
+        .mint-glow-focus:focus-within {
+            box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);
+            border-color: #00ffaa;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-mobile h-16 bg-background/80 backdrop-blur-md border-b border-white/10 md:px-container-desktop">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A cinematic, high-fashion portrait of a young professional with short dark hair, wearing a sleek black turtleneck. The lighting is dramatic and moody, with a vibrant mint green rim light illuminating the silhouette against a dark, charcoal grey background. The style is sophisticated and ultra-modern, emphasizing a tech-forward admin aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKH7HbqLy2oAjoWrWSuqAPliV0lPEzMVmvqwTKYlwLsmLRhLZj15XPBo9VyJ4RCxbMLE71bCrzuB42RFCQ5xJh3bMHyGuEj2JJZTY2gNwugB2BLj2Rdt-udy3DWC-EEWCrObLBXEN6QOe3jqMvJPSar0FuMzC7qdz7WFR7IsVIFIZ-TBZykC0-WjNiyHkxrL3rhfsSmGRVPxQKvOoW5kksCPPrqGb6YxjlIJMikPqqDaM3hPlpWadUHIaA9i4CMBj2w4U2Va-Y24w"/>
+</div>
+<h1 class="font-headline-md text-headline-md tracking-tighter text-on-background dark:text-on-background">A. AHMAD</h1>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:opacity-80 transition-opacity active:scale-95" data-icon="notifications">notifications</span>
+<button class="hidden md:flex bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-caps text-label-caps tracking-widest hover:brightness-110 active:scale-95 transition-all">
+                UPDATE WEBSITE
+            </button>
+</div>
+</header>
+<!-- Navigation Drawer (Desktop) -->
+<aside class="hidden md:flex flex-col fixed left-0 top-0 h-full z-40 bg-surface-container-low border-r border-white/10 w-72 pt-24 pb-8 px-6">
+<div class="mb-10 px-4">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full border border-primary-fixed-dim p-0.5">
+<img alt="A. Ahmad Avatar" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZl6sTr1tdFBtjj_C0mas4an13yzIl2o7gYnAucaopATVFOz80mF_5oXZsSvIMhbNgVCqskae0Cqk661YO4A5tSp52X41UlDjDZYHKUT-VOBxEDfg15W9Ski4HbiAUpepjaTtbX7saBrSvpiaJKhlM25tP8WX8a9gLU_OoIWjOcm3ev7FT5AmKYDesImrGclCWC51enFSIhDRSly7tvQxcHjOfU7Mp2Nr8i-8Ed1h9Ff--aCeFyoonqguc2h9UtN5WGQZvf2OKXNk"/>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm leading-none">A. Ahmad</h2>
+<p class="font-label-caps text-[10px] text-primary-fixed-dim tracking-tighter mt-1">AVAILABLE FOR WORK</p>
+</div>
+</div>
+<span class="font-label-caps text-[10px] text-on-surface-variant/50">ADMIN PANEL V2.4</span>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary-fixed-dim transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary-fixed-dim transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+<span class="font-label-caps text-label-caps">Projects</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-primary-fixed-dim font-bold border-l-4 border-primary-fixed-dim bg-white/5 group" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-label-caps text-label-caps">Skills</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary-fixed-dim transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="inbox">inbox</span>
+<span class="font-label-caps text-label-caps">Inbox</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary-fixed-dim transition-all group" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4 pt-4 border-t border-white/5">
+<div class="glass-card rounded-xl p-4 relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-label-caps text-[10px] text-on-surface-variant mb-2">LAST UPDATE</p>
+<p class="text-xs text-on-surface">2 hours ago</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-6xl" data-icon="cloud_sync">cloud_sync</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="min-h-screen pt-24 pb-32 px-container-mobile md:ml-72 md:px-container-desktop">
+<!-- Header Section -->
+<header class="mb-10">
+<h2 class="font-headline-md text-headline-md text-on-background mb-2">Skills &amp; Tech</h2>
+<p class="text-on-surface-variant max-w-lg">Manage your professional technical stack and expertise levels. These changes reflect directly on your public portfolio.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Frontend Section -->
+<section class="lg:col-span-8 glass-card rounded-xl p-6 relative overflow-hidden">
+<div class="flex justify-between items-center mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="devices">devices</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Frontend</h3>
+</div>
+<button class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+<div class="flex flex-wrap gap-3">
+<!-- Chips -->
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full border border-white/5 hover:border-primary-fixed-dim/30 transition-all group">
+<span class="font-label-caps text-label-caps">React</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant hover:text-error cursor-pointer transition-colors" data-icon="close">close</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full border border-white/5 hover:border-primary-fixed-dim/30 transition-all">
+<span class="font-label-caps text-label-caps">TypeScript</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant hover:text-error cursor-pointer" data-icon="close">close</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full border border-white/5 hover:border-primary-fixed-dim/30 transition-all">
+<span class="font-label-caps text-label-caps">Next.js</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant hover:text-error cursor-pointer" data-icon="close">close</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full border border-white/5 hover:border-primary-fixed-dim/30 transition-all">
+<span class="font-label-caps text-label-caps">Tailwind CSS</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant hover:text-error cursor-pointer" data-icon="close">close</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full border border-white/5 hover:border-primary-fixed-dim/30 transition-all">
+<span class="font-label-caps text-label-caps">Vue 3</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant hover:text-error cursor-pointer" data-icon="close">close</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full border border-white/5 hover:border-primary-fixed-dim/30 transition-all">
+<span class="font-label-caps text-label-caps">Framer Motion</span>
+<span class="material-symbols-outlined text-xs text-on-surface-variant hover:text-error cursor-pointer" data-icon="close">close</span>
+</div>
+<!-- Add Input Simulation -->
+<div class="flex items-center bg-transparent border border-dashed border-white/20 px-4 py-2 rounded-full focus-within:border-primary-fixed-dim transition-all">
+<input class="bg-transparent border-none p-0 text-xs font-label-caps focus:ring-0 placeholder:text-on-surface-variant/40 w-20" placeholder="Add Skill" type="text"/>
+<span class="material-symbols-outlined text-xs text-primary-fixed-dim" data-icon="add">add</span>
+</div>
+</div>
+<!-- Subtle Decorative Element -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primary-container/5 blur-3xl rounded-full"></div>
+</section>
+<!-- Tools Section (Smaller Card) -->
+<section class="lg:col-span-4 glass-card rounded-xl p-6">
+<div class="flex justify-between items-center mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-primary-fixed-dim">
+<span class="material-symbols-outlined" data-icon="construction">construction</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Tools</h3>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+<span class="font-label-caps text-label-caps">VS Code</span>
+<span class="material-symbols-outlined text-xs text-error cursor-pointer" data-icon="remove">remove</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+<span class="font-label-caps text-label-caps">Figma</span>
+<span class="material-symbols-outlined text-xs text-error cursor-pointer" data-icon="remove">remove</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+<span class="font-label-caps text-label-caps">Docker</span>
+<span class="material-symbols-outlined text-xs text-error cursor-pointer" data-icon="remove">remove</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+<span class="font-label-caps text-label-caps">Git</span>
+<span class="material-symbols-outlined text-xs text-error cursor-pointer" data-icon="remove">remove</span>
+</div>
+</div>
+</section>
+<!-- Backend Section -->
+<section class="lg:col-span-12 glass-card rounded-xl p-8">
+<div class="flex justify-between items-center mb-8">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-primary-fixed-dim">
+<span class="material-symbols-outlined text-3xl" data-icon="storage">storage</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm">Backend &amp; Infrastructure</h3>
+<p class="text-xs text-on-surface-variant font-label-caps tracking-widest mt-1">SERVER SIDE SYSTEMS</p>
+</div>
+</div>
+<button class="px-6 py-2 rounded-full border border-primary-fixed-dim text-primary-fixed-dim font-label-caps text-label-caps hover:bg-primary-fixed-dim/10 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add_circle">add_circle</span>
+                        NEW TECH
+                    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Skill Item -->
+<div class="p-5 bg-surface-container rounded-xl border border-white/5 hover:border-primary-fixed-dim/20 transition-all flex flex-col gap-4 group">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-lg">Node.js</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-error cursor-pointer" data-icon="delete">delete</span>
+</div>
+<div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[85%]" style="box-shadow: 0 0 10px rgba(0, 255, 170, 0.4)"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] text-on-surface-variant font-label-caps">EXPERT</span>
+<span class="text-[10px] text-on-surface-variant font-label-caps">85%</span>
+</div>
+</div>
+<!-- Skill Item -->
+<div class="p-5 bg-surface-container rounded-xl border border-white/5 hover:border-primary-fixed-dim/20 transition-all flex flex-col gap-4 group">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-lg">Python</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-error cursor-pointer" data-icon="delete">delete</span>
+</div>
+<div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[70%]" style="box-shadow: 0 0 10px rgba(0, 255, 170, 0.4)"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] text-on-surface-variant font-label-caps">ADVANCED</span>
+<span class="text-[10px] text-on-surface-variant font-label-caps">70%</span>
+</div>
+</div>
+<!-- Skill Item -->
+<div class="p-5 bg-surface-container rounded-xl border border-white/5 hover:border-primary-fixed-dim/20 transition-all flex flex-col gap-4 group">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-lg">PostgreSQL</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-error cursor-pointer" data-icon="delete">delete</span>
+</div>
+<div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[60%]" style="box-shadow: 0 0 10px rgba(0, 255, 170, 0.4)"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] text-on-surface-variant font-label-caps">PROFICIENT</span>
+<span class="text-[10px] text-on-surface-variant font-label-caps">60%</span>
+</div>
+</div>
+<!-- Skill Item -->
+<div class="p-5 bg-surface-container rounded-xl border border-white/5 hover:border-primary-fixed-dim/20 transition-all flex flex-col gap-4 group">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-lg">Redis</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-error cursor-pointer" data-icon="delete">delete</span>
+</div>
+<div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[45%]" style="box-shadow: 0 0 10px rgba(0, 255, 170, 0.4)"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] text-on-surface-variant font-label-caps">INTERMEDIATE</span>
+<span class="text-[10px] text-on-surface-variant font-label-caps">45%</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Mobile Update Button Floating -->
+<div class="md:hidden mt-8">
+<button class="w-full bg-primary-container text-on-primary-container py-4 rounded-xl font-label-caps text-label-caps tracking-widest shadow-[0_0_25px_rgba(0,255,170,0.2)] active:scale-95 transition-transform">
+                UPDATE WEBSITE
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 py-4 bg-surface-container/90 backdrop-blur-xl border-t border-white/5 rounded-t-full shadow-[0_-4px_24px_rgba(0,255,170,0.1)]">
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+</a>
+<a class="flex items-center justify-center bg-primary-container text-on-primary-container rounded-full w-12 h-12 shadow-[0_0_15px_rgba(0,255,170,0.3)] active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inbox">inbox</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</a>
+</nav>
+<!-- Custom Cursor Atmospheric Effect -->
+<div class="fixed pointer-events-none w-[400px] h-[400px] bg-primary-container/5 blur-[120px] rounded-full z-0 transition-opacity duration-500 opacity-0" id="glow"></div>
+<script>
+        // Micro-interaction for follow glow
+        const glow = document.getElementById('glow');
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX - 200;
+            const y = e.clientY - 200;
+            glow.style.transform = `translate(${x}px, ${y}px)`;
+            glow.style.opacity = '1';
+        });
+
+        // Skill removal simulation
+        document.querySelectorAll('[data-icon="close"], [data-icon="remove"], [data-icon="delete"]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const parent = e.target.closest('.group') || e.target.parentElement;
+                parent.style.opacity = '0';
+                parent.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    parent.remove();
+                }, 300);
+            });
+        });
+
+        // Update Website Button interaction
+        const updateBtns = document.querySelectorAll('button:contains("UPDATE WEBSITE"), .md\\:hidden button');
+        updateBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const originalText = btn.innerText;
+                btn.innerText = 'PUSHING...';
+                btn.classList.add('animate-pulse');
+                setTimeout(() => {
+                    btn.innerText = 'SUCCESS';
+                    btn.classList.remove('animate-pulse');
+                    btn.classList.replace('bg-primary-container', 'bg-green-500');
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.classList.replace('bg-green-500', 'bg-primary-container');
+                    }, 2000);
+                }, 1500);
+            });
+        });
+    </script>
+</body></html>

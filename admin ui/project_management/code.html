@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A. Ahmad | Project Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#00ffaa",
+                        "surface-bright": "#3a3939",
+                        "primary-fixed-dim": "#00e296",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#002112",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "primary-fixed": "#4dffb1",
+                        "on-primary-fixed-variant": "#005233",
+                        "outline": "#849589",
+                        "on-background": "#e5e2e1",
+                        "on-primary-container": "#007149",
+                        "background": "#131313",
+                        "on-primary": "#003822",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353534",
+                        "surface-dim": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "secondary-container": "#1a4e50",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary": "#f6fff6",
+                        "on-secondary-fixed": "#002021",
+                        "tertiary-container": "#e2dfdf",
+                        "secondary": "#9ecfd1",
+                        "inverse-primary": "#006c46",
+                        "on-secondary-fixed-variant": "#1a4e50",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary": "#313030",
+                        "surface": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-container": "#636262",
+                        "surface-tint": "#00e296",
+                        "on-secondary-container": "#8dbec0",
+                        "on-secondary": "#003739",
+                        "surface-variant": "#353534",
+                        "on-surface-variant": "#b9cbbd",
+                        "on-error": "#690005",
+                        "surface-container": "#201f1f",
+                        "outline-variant": "#3a4a40",
+                        "secondary-fixed-dim": "#9ecfd1",
+                        "secondary-fixed": "#b9ecee",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary": "#fffcfb",
+                        "surface-container-lowest": "#0e0e0e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-padding-desktop": "40px",
+                        "stack-sm": "12px",
+                        "container-padding-mobile": "20px",
+                        "stack-lg": "48px",
+                        "stack-md": "24px",
+                        "base": "8px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.1", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0a0a0a;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(0, 255, 170, 0.3);
+            box-shadow: 0 0 20px rgba(0, 255, 170, 0.05);
+            transform: translateY(-2px);
+        }
+        .mint-glow-btn {
+            box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);
+            transition: all 0.3s ease;
+        }
+        .mint-glow-btn:hover {
+            box-shadow: 0 0 25px rgba(0, 255, 170, 0.4);
+            transform: scale(1.02);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-mint {
+            font-variation-settings: 'FILL' 1;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00e296;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-mobile h-16 bg-background/80 backdrop-blur-md border-b border-white/10 md:px-container-padding-desktop">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-primary-container/30">
+<img alt="A. Ahmad Profile" data-alt="A professional close-up portrait of a tech-savvy creative professional with sharp features and a modern aesthetic. The lighting is dramatic and cinematic, utilizing deep shadows and vibrant mint-green rim lighting to create a high-end futuristic feel. The background is a soft-focus charcoal grey studio environment, emphasizing a minimalist and elite professional persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA_W5gdHuDoZlKpVFZUlNsH8KffUIOlhwbsGjQglGYOyxtwVV9mxVk6UCwX-ibpQzTjkXhoNcn9mS_27H2HVOjUA-LbIpfyIpUfOOT2uOF5vGaPGxkurYSwhc4qEtnZdGA9fE7Bx2dnt9m7QzOzjL0LXpovJW4DTm4BWaIfCNH-w5QnGD_GZyUqfG8-__s6Eyo9an2dP8kVld95LMyLiBvTgqulZVlU7w6fuG-Pn4t9YLrAf64FOAn80oD6tP9HKBg-H-zRYzlJAc"/>
+</div>
+<span class="font-headline-md text-headline-md tracking-tighter text-on-background dark:text-on-background">A. AHMAD</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">DASHBOARD</a>
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary-container pb-1" href="#">PROJECTS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#">SKILLS</a>
+</div>
+<button class="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform" data-icon="notifications">notifications</button>
+</div>
+</header>
+<!-- Navigation Drawer (Desktop Only) -->
+<aside class="hidden md:flex flex-col fixed left-0 top-0 h-full z-40 bg-surface-container-low border-r border-white/10 w-72 pt-24 px-6">
+<div class="mb-10 pl-2">
+<h2 class="font-headline-sm text-headline-sm text-primary">A. Ahmad</h2>
+<p class="text-on-surface-variant text-sm flex items-center gap-2">
+<span class="w-2 h-2 bg-primary-container rounded-full animate-pulse"></span>
+                Available for work
+            </p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-white/5 hover:text-primary transition-all rounded-lg font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> DASHBOARD
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-primary-fixed-dim font-bold border-l-4 border-primary-fixed-dim bg-white/5 rounded-r-lg font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined active-mint" data-icon="work" style="font-variation-settings: 'FILL' 1;">work</span> PROJECTS
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-white/5 hover:text-primary transition-all rounded-lg font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span> SKILLS
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-white/5 hover:text-primary transition-all rounded-lg font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="inbox">inbox</span> INBOX
+            </a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-white/5 hover:text-primary transition-all rounded-lg font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> SETTINGS
+            </a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="pt-24 pb-32 px-container-mobile md:pl-80 md:pr-container-padding-desktop min-h-screen">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<span class="font-label-caps text-label-caps text-primary-fixed-dim tracking-[0.2em] mb-2 block">ADMIN PANEL</span>
+<h1 class="font-headline-md text-headline-md text-on-background">Projects</h1>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 items-center">
+<!-- Search Bar -->
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl">search</span>
+<input class="w-full bg-surface-container-high border border-outline-variant rounded-xl py-2 pl-10 pr-4 text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Filter projects..." type="text"/>
+</div>
+<!-- Add New Button -->
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary-container text-on-primary-container font-label-caps text-label-caps px-6 py-3 rounded-full mint-glow-btn">
+<span class="material-symbols-outlined">add</span>
+                    ADD NEW PROJECT
+                </button>
+</div>
+</div>
+<!-- Project Bento/Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Project Card 1 -->
+<div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+<div class="h-48 overflow-hidden relative">
+<img alt="AI Portfolio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A futuristic web application interface featuring abstract generative art with neon mint green pulses against a deep charcoal void background. The scene is illuminated by soft volumetric lighting and features translucent UI components, reflecting a clean, high-end technical aesthetic. The mood is sophisticated and advanced, perfectly aligned with dark-mode admin dashboard design principles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRkwz6N0pLbWcHnxuAwapsoY7ZaM4Dl68SQn3U2tUZ-n-Z4R9We9UXIkJT61dEwpWqf_wL1bZc8LcdDOsYbzVHKWKrk57zDKvkbDGxsz8G-qhzGJcs1-0ZYTvOexKigDtZoYprcIGr4j3LfzrPuYKOYCoAjsTyCVMklvuMdViuWkkEoy3Nz1_F0vQOU2lzKYnWuNs3eR0AOndjMzoG7ANI9QtaiMiuU8Gx4JqbfDKrxjMyrCW4d_jDftkUNq8spe6qROuHQeWeFq0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex gap-2">
+<span class="bg-secondary-container/40 backdrop-blur-md text-secondary-fixed text-[10px] font-bold px-2 py-1 rounded border border-white/10">REACT</span>
+<span class="bg-secondary-container/40 backdrop-blur-md text-secondary-fixed text-[10px] font-bold px-2 py-1 rounded border border-white/10">THREE.JS</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-2">AI Portfolio</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Generative art portfolio leveraging GPT-4 for dynamic narrative generation and content curation.</p>
+<div class="mt-auto flex justify-between items-center border-t border-white/5 pt-4">
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary-fixed-dim transition-colors" data-icon="edit">edit</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-error transition-colors" data-icon="delete">delete</button>
+</div>
+<a class="material-symbols-outlined text-primary-container" data-icon="open_in_new" href="#">open_in_new</a>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+<div class="h-48 overflow-hidden relative">
+<img alt="Fintech Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A professional high-contrast financial data visualization interface showing complex line charts and candlestick patterns in vibrant mint green and teal. The background is a velvety charcoal black with subtle light refraction effects on glass-like containers. The aesthetic is elite and data-heavy, focused on precision and clarity for advanced financial analysis in a dark environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8nNTTAR8ZNR4uWk4_ag4Lgco5D7wAL-EZYSHcvAu6PfZrHqHglL1Ek6A4E5z80JEN4WM_QZbHlLyxxjEcSP_hyAj31VebGnh8EyzyqUcIpZ6wv1Xr5zL6pEPwOxE0L_1NSTUgYFXOmKoakQ7_75urQ4w5tAsyhglCOJ9vqZks_rFdQB9S2BwHCgCvUmzfj6jsJD3aIIcTPWuoW1VWi-e2M2cJhoCcEYqG5nDx7uOvKiOa72pqNgBG_o_HWuFoirBJLDPluWW4XHs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex gap-2">
+<span class="bg-secondary-container/40 backdrop-blur-md text-secondary-fixed text-[10px] font-bold px-2 py-1 rounded border border-white/10">NEXT.JS</span>
+<span class="bg-secondary-container/40 backdrop-blur-md text-secondary-fixed text-[10px] font-bold px-2 py-1 rounded border border-white/10">TAILWIND</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-2">Quant Dashboard</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Real-time cryptocurrency analytics suite with custom indicators and institutional-grade charting.</p>
+<div class="mt-auto flex justify-between items-center border-t border-white/5 pt-4">
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary-fixed-dim transition-colors" data-icon="edit">edit</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-error transition-colors" data-icon="delete">delete</button>
+</div>
+<a class="material-symbols-outlined text-primary-container" data-icon="open_in_new" href="#">open_in_new</a>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+<div class="h-48 overflow-hidden relative">
+<img alt="Cyber Security" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-tech cybersecurity interface showing digital circuitry and encrypted data streams glowing in intense mint and neon blue. The environment is dark and immersive, like a mission control center with translucent holographic overlays. The visual style uses sharp edges, glowing lines, and a deep monochromatic black foundation to convey security and technological sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqekIi0I1v_zPATGh2u3RfyRn-hfrgIRRnOYULNSewW1V1vfdISUgZrib7Djvq8doxSxt1Lvws-s4aR1it6A5k3w_SHPa37llEci-s8tRxFB82Gl2UCbBUGQ0IZ3wvGietGezx_YnYDe4wtr0Tfioikdp-qWLkDt8vWxGCdykMoxHTO1IYTsGHf5p9odWv3u0CG0b5P0dIy0Pdjbqs8KZsIY2u5ljIdm3ZD2UVaIdkPDq3idYdm_8z6nl9QSaR0TsZfKf8wfMFras"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex gap-2">
+<span class="bg-secondary-container/40 backdrop-blur-md text-secondary-fixed text-[10px] font-bold px-2 py-1 rounded border border-white/10">PYTHON</span>
+<span class="bg-secondary-container/40 backdrop-blur-md text-secondary-fixed text-[10px] font-bold px-2 py-1 rounded border border-white/10">DOCKER</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-2">Void Sentinel</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">Automated vulnerability scanning tool with AI-driven threat mitigation recommendations for enterprise cloud.</p>
+<div class="mt-auto flex justify-between items-center border-t border-white/5 pt-4">
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary-fixed-dim transition-colors" data-icon="edit">edit</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-error transition-colors" data-icon="delete">delete</button>
+</div>
+<a class="material-symbols-outlined text-primary-container" data-icon="open_in_new" href="#">open_in_new</a>
+</div>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+<div class="h-48 overflow-hidden relative">
+<img alt="Minimalist Art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A clean, minimalist gallery space with high-end digital art displayed on sleek edge-to-edge monitors. The room is characterized by hard shadows and bright mint-green light spills on charcoal gray walls. The composition is geometric and balanced, showcasing an editorial aesthetic that blends modern architecture with advanced digital display technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ1fvixS3rXz7FVCSPxmom5AbJGGWUazV_9M_ahfJAVtEBuVhhMdE7xZo6yXXEG39fOt-nkZk_96pfv4QsCN03RJBpep4zqf8weS3TST3whuc59VVQZVsCWOWoIK3Ift5YmxWCOUtsn52W8XTgWcGDRWLWgzkaBq6_4EQpF1wDeytJph8PAjDWWmkqDdnt-6Dif6ODVzfI2FfpypgAKQfRpS9NYNjgJrsebHxNw67cLbs4049pmoVdduK3ONQUq53oufLr4NM_psM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex gap-2">
+<span class="bg-secondary-container/40 backdrop-blur-md text-secondary-fixed text-[10px] font-bold px-2 py-1 rounded border border-white/10">VUE.JS</span>
+<span class="bg-secondary-container/40 backdrop-blur-md text-secondary-fixed text-[10px] font-bold px-2 py-1 rounded border border-white/10">GSAP</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-2">Glass Gallery</h3>
+<p class="text-on-surface-variant text-sm mb-6 line-clamp-2">A high-performance museum archive system for digital collectibles with smooth GSAP animations.</p>
+<div class="mt-auto flex justify-between items-center border-t border-white/5 pt-4">
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary-fixed-dim transition-colors" data-icon="edit">edit</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-error transition-colors" data-icon="delete">delete</button>
+</div>
+<a class="material-symbols-outlined text-primary-container" data-icon="open_in_new" href="#">open_in_new</a>
+</div>
+</div>
+</div>
+<!-- Empty State / Placeholder Card -->
+<div class="border-2 border-dashed border-white/10 rounded-2xl flex flex-items-center justify-center min-h-[350px] group cursor-pointer hover:border-primary-container/30 transition-colors">
+<div class="text-center p-8">
+<div class="w-16 h-16 bg-surface-container rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">add</span>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">CREATE NEW<br/>PROJECT SLOT</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 py-4 bg-surface-container/90 backdrop-blur-xl border-t border-white/5 rounded-t-full shadow-[0_-4px_24px_rgba(0,255,170,0.1)]">
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</a>
+<a class="flex items-center justify-center bg-primary-container text-on-primary-container rounded-full w-12 h-12 shadow-[0_0_15px_rgba(0,255,170,0.3)] active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined active-mint" data-icon="work" style="font-variation-settings: 'FILL' 1;">work</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inbox">inbox</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</a>
+</nav>
+<!-- Floating Action Button (FAB) - Mobile Contextual -->
+<button class="md:hidden fixed bottom-24 right-6 w-14 h-14 bg-primary-container text-on-primary-container rounded-full shadow-lg flex items-center justify-center z-40 active:scale-95 transition-transform mint-glow-btn">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<script>
+        // Simple search filtering logic
+        const searchInput = document.querySelector('input[placeholder="Filter projects..."]');
+        const projectCards = document.querySelectorAll('.glass-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            projectCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                if (title.includes(term) || description.includes(term)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Micro-interaction for cards
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('[data-icon="open_in_new"]');
+                if(icon) icon.classList.add('animate-pulse');
+            });
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('[data-icon="open_in_new"]');
+                if(icon) icon.classList.remove('animate-pulse');
+            });
+        });
+    </script>
+</body></html>

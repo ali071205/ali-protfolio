@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Void &amp; Mint | Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0a0a0a;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .mint-glow {
+            box-shadow: 0 0 15px rgba(0, 255, 170, 0.15);
+        }
+        .mint-border-glow:focus-within {
+            border-color: #00ffaa;
+            box-shadow: 0 0 10px rgba(0, 255, 170, 0.2);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#00ffaa",
+                        "surface-bright": "#3a3939",
+                        "primary-fixed-dim": "#00e296",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#002112",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "primary-fixed": "#4dffb1",
+                        "on-primary-fixed-variant": "#005233",
+                        "outline": "#849589",
+                        "on-background": "#e5e2e1",
+                        "on-primary-container": "#007149",
+                        "background": "#131313",
+                        "on-primary": "#003822",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353534",
+                        "surface-dim": "#131313",
+                        "on-surface": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "secondary-container": "#1a4e50",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary": "#f6fff6",
+                        "on-secondary-fixed": "#002021",
+                        "tertiary-container": "#e2dfdf",
+                        "secondary": "#9ecfd1",
+                        "inverse-primary": "#006c46",
+                        "on-secondary-fixed-variant": "#1a4e50",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary": "#313030",
+                        "surface": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-container": "#636262",
+                        "surface-tint": "#00e296",
+                        "on-secondary-container": "#8dbec0",
+                        "on-secondary": "#003739",
+                        "surface-variant": "#353534",
+                        "on-surface-variant": "#b9cbbd",
+                        "on-error": "#690005",
+                        "surface-container": "#201f1f",
+                        "outline-variant": "#3a4a40",
+                        "secondary-fixed-dim": "#9ecfd1",
+                        "secondary-fixed": "#b9ecee",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary": "#fffcfb",
+                        "surface-container-lowest": "#0e0e0e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-padding-desktop": "40px",
+                        "stack-sm": "12px",
+                        "container-padding-mobile": "20px",
+                        "stack-lg": "48px",
+                        "stack-md": "24px",
+                        "base": "8px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display-lg-mobile": ["Libre Caslon Text"],
+                        "display-lg": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.1", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-mobile h-16 bg-background/80 backdrop-blur-md border-b border-white/10 md:px-12">
+<div class="flex items-center gap-4">
+<img alt="User profile photo" class="w-8 h-8 rounded-full border border-primary-container/30 cursor-pointer active:scale-95 transition-transform" data-alt="A professional close-up studio portrait of a young male designer with a modern aesthetic. The lighting is dramatic and high-contrast, utilizing the brand's signature deep charcoal and vibrant mint green highlights. The subject has a confident expression, set against a dark, textured background that reinforces the premium, elite professional atmosphere of the dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3cHPHFqOoq7IAGsiqCSiI6VkAAoXhebMd23X3UIVgjm-34MiXD5gtqk1II8ISq3R2q1flBvzq_XW6t9O2EnwR1vH7NVPhpASKmxrZeiONVVn8i_As3WOsnddOZpGAQTy7IGhJXxPLxtxFb0Grnt_rq661kqmdHi97sU5bsDOfc01YL0u13cG8nVaYu3H81y2MTs6hVWhx5VDQD_w5ZMTN08GCI_H690gQPSKEAj7y2BnOi_Kina6f2eUHgZ1Bo_I1KmkvdwuoDg0"/>
+<span class="font-headline-md text-headline-md tracking-tighter text-on-background dark:text-on-background">A. AHMAD</span>
+</div>
+<div class="flex items-center gap-6">
+<!-- Availability Toggle -->
+<div class="hidden sm:flex items-center gap-3 glass-card px-4 py-1.5 rounded-full border-white/5">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Available for work</span>
+<button class="w-10 h-5 bg-primary-container/20 rounded-full relative transition-colors duration-300" id="availabilityToggle">
+<div class="absolute left-1 top-1 w-3 h-3 bg-primary-container rounded-full shadow-[0_0_8px_rgba(0,255,170,0.6)] transition-all duration-300 transform translate-x-5"></div>
+</button>
+</div>
+<button class="relative text-primary cursor-pointer active:scale-95 transition-transform hover:opacity-80">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary-container rounded-full border border-background"></span>
+</button>
+</div>
+</header>
+<!-- Side Navigation (Desktop) -->
+<aside class="hidden md:flex flex-col fixed left-0 top-0 h-full z-40 bg-surface-container-low border-r border-white/10 w-72 pt-24 pb-8">
+<div class="px-8 mb-12">
+<div class="flex items-center gap-4 mb-2">
+<img alt="A. Ahmad Avatar" class="w-12 h-12 rounded-lg object-cover" data-alt="A stylized, minimalist avatar icon representing an elite professional designer. The avatar uses a clean, geometric design with a color palette of deep black and electric mint green. The background is a subtle, dark gray gradient with glassmorphic textures, conveying a sense of high-end technical precision and exclusive workspace luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm3MttQdLkOlhsvR_d-PyXgr6vCyRqQbzU-OFeewWT0wLlGRzzjRit7LV9z4qQrynRoTqh8AZJy1vpY0ResXX5pNzpbeBHuRh7DW3JleTVIG_RhR_74X7aqnmb-kJXbSnh_h9rkxB8rdl_rMU1_utMmSfmh3fKM2L4guXlvOTogiVRwnaOnKqTHlUPN9ck79y_IBgLo80elsZbxh_ypPkrPxh3s7dT5M9p2nVkSxtGQkkbamY0GZyvzWPlKPKtMOd0bWxcTSNZWEA"/>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary-fixed-dim leading-none">A. Ahmad</h3>
+<p class="font-label-caps text-[10px] text-primary-container mt-1">Available for work</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 px-8 py-4 text-primary-fixed-dim font-bold border-l-4 border-primary-fixed-dim bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-8 py-4 text-on-surface-variant hover:bg-white/5 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">work</span>
+<span class="font-label-caps text-label-caps">Projects</span>
+</a>
+<a class="flex items-center gap-4 px-8 py-4 text-on-surface-variant hover:bg-white/5 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-caps text-label-caps">Skills</span>
+</a>
+<a class="flex items-center gap-4 px-8 py-4 text-on-surface-variant hover:bg-white/5 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">inbox</span>
+<span class="font-label-caps text-label-caps">Inbox</span>
+</a>
+<a class="flex items-center gap-4 px-8 py-4 text-on-surface-variant hover:bg-white/5 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</nav>
+<div class="px-8 pt-8 border-t border-white/5">
+<div class="glass-card p-4 rounded-xl border-primary-container/10">
+<p class="font-label-caps text-[10px] text-on-surface-variant mb-2">SYSTEM LOAD</p>
+<div class="w-full bg-white/5 h-1 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[42%] shadow-[0_0_8px_rgba(0,255,170,0.4)]"></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="pt-24 pb-32 px-container-mobile md:pl-80 md:pr-12 md:pt-28 min-h-screen">
+<!-- Welcome Header -->
+<section class="mb-stack-md flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-headline-md text-headline-md md:text-[48px] text-primary-fixed-dim leading-tight">Overview</h1>
+<p class="font-body-md text-on-surface-variant mt-2 max-w-md">Welcome back, Ahmad. Your portfolio is currently performing at peak efficiency.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-primary-container text-on-primary-container font-label-caps text-label-caps px-6 py-3 rounded-full flex items-center gap-2 active:scale-95 transition-transform mint-glow">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    NEW PROJECT
+                </button>
+</div>
+</section>
+<!-- Quick Stats Bento Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter mb-stack-md">
+<!-- Total Projects -->
+<div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-40 group hover:border-primary-container/40 transition-all duration-300">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-fixed-dim p-2 bg-white/5 rounded-lg group-hover:scale-110 transition-transform">work</span>
+<span class="text-primary-container text-[12px] font-bold">+2 this week</span>
+</div>
+<div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-background leading-none">12</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">TOTAL PROJECTS</p>
+</div>
+</div>
+<!-- Added Skills -->
+<div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-40 group hover:border-primary-container/40 transition-all duration-300">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-fixed-dim p-2 bg-white/5 rounded-lg group-hover:scale-110 transition-transform">psychology</span>
+<span class="text-on-surface-variant text-[12px] font-bold">Expert Tier</span>
+</div>
+<div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-background leading-none">24</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">ADDED SKILLS</p>
+</div>
+</div>
+<!-- New Messages -->
+<div class="glass-card p-6 rounded-2xl flex flex-col justify-between h-40 group hover:border-primary-container/40 transition-all duration-300 border-primary-container/20">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-fixed-dim p-2 bg-white/5 rounded-lg group-hover:scale-110 transition-transform">inbox</span>
+<div class="flex gap-1">
+<span class="w-1.5 h-1.5 bg-primary-container rounded-full animate-pulse"></span>
+</div>
+</div>
+<div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-on-background leading-none">5</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">NEW MESSAGES</p>
+</div>
+</div>
+</section>
+<!-- Main Dashboard Split -->
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-gutter">
+<!-- Gemini AI Section (Col Span 3) -->
+<div class="lg:col-span-3 space-y-gutter">
+<div class="relative overflow-hidden glass-card rounded-3xl p-8 border-primary-container/20 group">
+<!-- Background AI Visualization Placeholder -->
+
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary-fixed-dim animate-spin-slow" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-caps text-label-caps text-primary-fixed-dim tracking-[0.2em]">GEMINI INTELLIGENCE</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-4">You have 3 unread high-priority inquiries.</h2>
+<p class="font-body-md text-on-surface-variant mb-8 max-w-lg">Based on project timelines and sender history, 3 messages from Venture Capital leads require immediate attention to secure upcoming milestones.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary-container font-label-caps text-label-caps px-8 py-4 rounded-xl flex items-center gap-2 hover:brightness-110 active:scale-95 transition-all shadow-[0_0_20px_rgba(0,255,170,0.3)]">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+                                ASK GEMINI
+                            </button>
+<button class="border border-white/10 hover:border-primary-container/30 text-on-surface font-label-caps text-label-caps px-8 py-4 rounded-xl transition-all active:scale-95">
+                                VIEW ANALYTICS
+                            </button>
+</div>
+</div>
+</div>
+<!-- Secondary Data Visualization Placeholder -->
+<div class="glass-card rounded-3xl p-6 h-64 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant">PERFORMANCE TRENDS</h3>
+<div class="flex gap-2">
+<div class="w-2 h-2 rounded-full bg-primary-container"></div>
+<div class="w-2 h-2 rounded-full bg-white/10"></div>
+</div>
+</div>
+<div class="flex-1 flex items-end justify-between gap-2 px-2">
+<!-- Bar chart simulation -->
+<div class="w-full bg-white/5 rounded-t-lg h-[40%] transition-all hover:bg-primary-container/40"></div>
+<div class="w-full bg-white/5 rounded-t-lg h-[65%] transition-all hover:bg-primary-container/40"></div>
+<div class="w-full bg-primary-container/60 rounded-t-lg h-[85%] transition-all hover:bg-primary-container/80 shadow-[0_0_10px_rgba(0,255,170,0.2)]"></div>
+<div class="w-full bg-white/5 rounded-t-lg h-[55%] transition-all hover:bg-primary-container/40"></div>
+<div class="w-full bg-white/5 rounded-t-lg h-[95%] transition-all hover:bg-primary-container/40"></div>
+<div class="w-full bg-white/5 rounded-t-lg h-[30%] transition-all hover:bg-primary-container/40"></div>
+<div class="w-full bg-white/5 rounded-t-lg h-[50%] transition-all hover:bg-primary-container/40"></div>
+</div>
+</div>
+</div>
+<!-- Recent Activity (Col Span 2) -->
+<div class="lg:col-span-2 space-y-gutter">
+<div class="glass-card rounded-3xl p-8 h-full flex flex-col">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-label-caps text-label-caps text-primary-fixed-dim">RECENT ACTIVITY</h3>
+<button class="text-[12px] text-on-surface-variant hover:text-primary transition-colors underline decoration-primary/20">View All</button>
+</div>
+<div class="space-y-6 flex-1">
+<!-- Activity Item 1 -->
+<div class="flex gap-4 group">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/5 group-hover:border-primary-container/20 transition-all">
+<span class="material-symbols-outlined text-[18px] text-primary-container">upload_file</span>
+</div>
+<div class="space-y-1">
+<p class="font-body-md text-on-surface text-[14px]">Updated <span class="text-primary-fixed-dim font-semibold">Neon Architecture</span> project files.</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant">2 HOURS AGO</p>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex gap-4 group">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/5 group-hover:border-primary-container/20 transition-all">
+<span class="material-symbols-outlined text-[18px] text-primary-container">mail</span>
+</div>
+<div class="space-y-1">
+<p class="font-body-md text-on-surface text-[14px]">New message from <span class="text-primary-fixed-dim font-semibold">Sarah Jenkins</span> (Studio Flux).</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant">5 HOURS AGO</p>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex gap-4 group">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/5 group-hover:border-primary-container/20 transition-all">
+<span class="material-symbols-outlined text-[18px] text-primary-container">verified</span>
+</div>
+<div class="space-y-1">
+<p class="font-body-md text-on-surface text-[14px]">Skills verification badge earned for <span class="text-primary-fixed-dim font-semibold">Three.js</span>.</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant">YESTERDAY</p>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-white/5">
+<div class="flex items-center gap-4 p-4 rounded-2xl bg-primary-container/5 border border-primary-container/10">
+<div class="flex -space-x-3">
+<img class="w-8 h-8 rounded-full border-2 border-background" data-alt="Profile photo of a professional technology scout from a global innovation lab. The photo has high-end studio lighting with a cold, minimalist office setting and subtle tech accents in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8pjgO_BdHtWHcsOImlz-ewAMJuXpBYJZ3QiQf-iH78nhbo1vGAOCpjL1weKD3uIFDgxgwB64Z--9q_javx2nk1Y7uOJOjN3CCJvqtqrmkI5P8aW9qSQdXf1UdtyD0yAcvWfDzgwbtk1_XmehnmqG8zIcabyfLaJAPA6KuImaQJ869gS41yYAjcX70ZtiEu-QzMry_xGiDPwt-8vWN1XNB963muuf6-3Iux1s8B8Lm9m9-JTxKlej4LY2qf6z-0WXBB_2_wHNS_9Y"/>
+<img class="w-8 h-8 rounded-full border-2 border-background" data-alt="Portrait of a venture capital partner specializing in creative technology. The image is captured in a high-key, modern architectural environment with strong geometric lines and a sophisticated dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASWqZirFUmIcy_zRx-LJD-InAadNHThGTKW74MNbWrj-OXuDu0ruXbyJIYzkNQ5tSLb363X1sJbmAWFiPf4Rc2m6GY3eqELokdwJ_Kk9-jdM-uGrYy2emY6m7hhzQ6VcD2KJTqnLV-DGwhhBqaEvs8oJEBPBmyfcLL2C4Lst7fsAXZ31Pbz5tS4D8m4RJ9onRg8USUw3hiDmmmey30uTKF0Jv1liqIacUPAB8l0xtfZD9bOK-jG7b-HoBYDkBiaMpm50pRYz_EQ4U"/>
+<div class="w-8 h-8 rounded-full border-2 border-background bg-surface-container flex items-center justify-center text-[10px] font-bold text-primary-fixed-dim">+12</div>
+</div>
+<p class="font-label-caps text-[10px] text-on-surface-variant">PROFILE VIEWS TODAY</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 py-4 bg-surface-container/90 backdrop-blur-xl border-t border-white/5 rounded-t-full shadow-[0_-4px_24px_rgba(0,255,170,0.1)] md:hidden">
+<a class="flex items-center justify-center bg-primary-container text-on-primary-container rounded-full w-12 h-12 shadow-[0_0_15px_rgba(0,255,170,0.3)] transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">work</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">psychology</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">inbox</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined">settings</span>
+</a>
+</nav>
+<script>
+        // Toggle Logic for Availability
+        const toggleBtn = document.getElementById('availabilityToggle');
+        const knob = toggleBtn.querySelector('div');
+        let isAvailable = true;
+
+        toggleBtn.addEventListener('click', () => {
+            isAvailable = !isAvailable;
+            if (isAvailable) {
+                knob.classList.remove('translate-x-0');
+                knob.classList.add('translate-x-5');
+                toggleBtn.classList.remove('bg-white/10');
+                toggleBtn.classList.add('bg-primary-container/20');
+                knob.classList.add('bg-primary-container');
+                knob.classList.remove('bg-on-surface-variant');
+            } else {
+                knob.classList.remove('translate-x-5');
+                knob.classList.add('translate-x-0');
+                toggleBtn.classList.add('bg-white/10');
+                toggleBtn.classList.remove('bg-primary-container/20');
+                knob.classList.remove('bg-primary-container');
+                knob.classList.add('bg-on-surface-variant');
+            }
+        });
+
+        // Add subtle mouse parallax to glass cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+                
+                // Optional highlight effect
+                card.style.background = `radial-gradient(400px circle at ${x}px ${y}px, rgba(0, 255, 170, 0.05), rgba(255, 255, 255, 0.03))`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.background = `rgba(255, 255, 255, 0.03)`;
+            });
+        });
+    </script>
+</body></html>

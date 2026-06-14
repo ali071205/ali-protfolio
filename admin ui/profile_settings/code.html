@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile Settings | A. AHMAD</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#00ffaa",
+                    "surface-bright": "#3a3939",
+                    "primary-fixed-dim": "#00e296",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#002112",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "primary-fixed": "#4dffb1",
+                    "on-primary-fixed-variant": "#005233",
+                    "outline": "#849589",
+                    "on-background": "#e5e2e1",
+                    "on-primary-container": "#007149",
+                    "background": "#131313",
+                    "on-primary": "#003822",
+                    "error-container": "#93000a",
+                    "surface-container-highest": "#353534",
+                    "surface-dim": "#131313",
+                    "on-surface": "#e5e2e1",
+                    "inverse-on-surface": "#313030",
+                    "secondary-container": "#1a4e50",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "tertiary-fixed": "#e5e2e1",
+                    "primary": "#f6fff6",
+                    "on-secondary-fixed": "#002021",
+                    "tertiary-container": "#e2dfdf",
+                    "secondary": "#9ecfd1",
+                    "inverse-primary": "#006c46",
+                    "on-secondary-fixed-variant": "#1a4e50",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-container-high": "#2a2a2a",
+                    "on-tertiary": "#313030",
+                    "surface": "#131313",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary-container": "#636262",
+                    "surface-tint": "#00e296",
+                    "on-secondary-container": "#8dbec0",
+                    "on-secondary": "#003739",
+                    "surface-variant": "#353534",
+                    "on-surface-variant": "#b9cbbd",
+                    "on-error": "#690005",
+                    "surface-container": "#201f1f",
+                    "outline-variant": "#3a4a40",
+                    "secondary-fixed-dim": "#9ecfd1",
+                    "secondary-fixed": "#b9ecee",
+                    "surface-container-low": "#1c1b1b",
+                    "tertiary": "#fffcfb",
+                    "surface-container-lowest": "#0e0e0e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-padding-desktop": "40px",
+                    "stack-sm": "12px",
+                    "container-padding-mobile": "20px",
+                    "stack-lg": "48px",
+                    "stack-md": "24px",
+                    "base": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Libre Caslon Text"],
+                    "headline-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "display-lg-mobile": ["Libre Caslon Text"],
+                    "display-lg": ["Libre Caslon Text"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.1", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0a0a0a;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(28, 27, 27, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .mint-glow {
+            box-shadow: 0 0 20px rgba(0, 255, 170, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 170, 0.2);
+            border-radius: 10px;
+        }
+        .toggle-switch:checked + .toggle-bg {
+            background-color: #00ffaa;
+        }
+        .toggle-switch:checked + .toggle-bg .toggle-dot {
+            transform: translateX(100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-mobile h-16 bg-background/80 backdrop-blur-md border-b border-white/10 md:px-container-desktop">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-white/10 cursor-pointer active:scale-95 transition-transform">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A high-end editorial portrait of a professional male architect with short dark hair and a confident expression. The lighting is dramatic and cinematic, with cool mint highlights and deep charcoal shadows, matching a premium dark-mode dashboard aesthetic. The background is a soft-focus architectural studio with subtle geometric light patterns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBurG3r5njJ3DfD1c7a88evgnQp28H0sH2AKpL7PEOrdyofLc-qQi6w6lB-fLroP0BAYdAPnS1mfgKJr6Sg0OxwJKvsbFApReeeOm1HM9IXdMLSiAXqiCGEeYXnwvYrvl0LEF1y3cWhBK4GKytlwaXKgvIoXcJe6ldlHC8QplByUSWFy6dHhnUZ1XZ2CsKrja01O_rIIxToxGTrODrZFpOm_JZLk11FsL3ipdELMEq0KEDD_Ie0zQ0_t9izteUkzcRiXG4Yiyj3caQ"/>
+</div>
+<h1 class="font-headline-md text-headline-md tracking-tighter text-on-background">A. AHMAD</h1>
+</div>
+<button class="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform">notifications</button>
+</header>
+<!-- NavigationDrawer (Desktop) -->
+<aside class="hidden md:flex flex-col fixed left-0 top-0 h-full w-72 z-40 bg-surface-container-low border-r border-white/10 pt-20">
+<div class="px-6 mb-10 flex flex-col items-start">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-12 h-12 rounded-full border border-primary-container p-0.5">
+<img alt="A. Ahmad Avatar" class="rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDECIGmmif4eOEBL1rwtM8bLWfqgykbdJ_Cbzx0ZPxyXjVj6lJWR88CmBxj4GJLJtIJMPNDn4HTmzdqziCMVsR8FPK2-wnLNFgdKsu5AKJZpAgX5VhiU00grLBonxFQrft2ef6hlZKVz9VIJcpiBrqMLAdNW_25mbQGnEPD6PFa3d00auqrLBi_3sh-AKJn5yKGfvrWlDSD04thAXBwMM2aepmAkYObyIN3DzJGLYwsg2seyRj4ZmPV-pZpAzyk1C1CMfTnBlQtWw4"/>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-primary">A. Ahmad</p>
+<p class="font-label-caps text-[10px] text-primary-fixed-dim">Available for work</p>
+</div>
+</div>
+<span class="font-label-caps text-[10px] text-on-surface-variant bg-white/5 px-2 py-1 rounded">Admin</span>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">work</span>
+<span class="font-label-caps text-label-caps">Projects</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">psychology</span>
+<span class="font-label-caps text-label-caps">Skills</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant hover:bg-white/5 transition-all group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">inbox</span>
+<span class="font-label-caps text-label-caps">Inbox</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-primary-fixed-dim font-bold border-l-4 border-primary-fixed-dim bg-white/5" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="pt-24 px-container-mobile md:pl-80 md:pr-container-desktop max-w-7xl mx-auto">
+<header class="mb-stack-lg">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary tracking-tight">Profile Settings</h2>
+<p class="text-on-surface-variant font-body-lg mt-2">Manage your professional identity and presence across the Void platform.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Avatar & Work Status -->
+<section class="lg:col-span-4 flex flex-col gap-gutter">
+<div class="glass-card rounded-xl p-8 flex flex-col items-center text-center">
+<div class="relative group cursor-pointer">
+<div class="w-32 h-32 rounded-full overflow-hidden border-2 border-primary-container shadow-[0_0_30px_rgba(0,255,170,0.15)]">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHvRyTK_YUnJR7eebdVM9cnCvlz7CItxyPiDPGbrx5rIaYznIhAnhZgNRfI0kV0w1mSFFrt5XgQ0tWEQvX7mDYdaGuBeM2yPm67QFpXmLnDKil7N4niPjPuDA0ch77kFW4gv1ywqppGon9gz8n_7kbM1dz9UXcLCSrRKIcgq1pwrCGUiqxuGHIwdevq_0bX1AEpP1ky8bTo4T3XKTomF1gdLIQpmCumz-zU6NotQ26c8KGtQC0hFs5iRqFY8HMdVzc-atn9P7rC-c"/>
+</div>
+<div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-white">edit</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm mt-6 mb-1">A. Ahmad</h3>
+<p class="font-label-caps text-on-surface-variant mb-6">SENIOR UI ARCHITECT</p>
+<button class="w-full py-3 border border-outline-variant hover:border-primary-container text-primary transition-colors font-label-caps text-label-caps rounded-lg">
+                        UPDATE PHOTO
+                    </button>
+</div>
+<div class="glass-card rounded-xl p-8">
+<div class="flex items-center justify-between mb-6">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant">WORK STATUS</h4>
+<span class="px-3 py-1 rounded-full bg-primary-container/10 text-primary-fixed-dim font-label-caps text-[10px] mint-glow" id="status-badge">AVAILABLE</span>
+</div>
+<label class="flex items-center cursor-pointer select-none group">
+<div class="relative">
+<input checked="" class="sr-only toggle-switch" id="work-toggle" type="checkbox"/>
+<div class="toggle-bg block bg-surface-container-highest w-14 h-8 rounded-full transition-colors duration-300">
+<div class="toggle-dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-transform duration-300 shadow-md"></div>
+</div>
+</div>
+<div class="ml-4">
+<p class="font-body-md text-primary group-hover:text-primary-container transition-colors" id="toggle-label">Available for work</p>
+<p class="text-[11px] text-on-surface-variant font-label-caps">SIGNAL TO RECRUITERS</p>
+</div>
+</label>
+</div>
+</section>
+<!-- Right Column: About & Settings -->
+<section class="lg:col-span-8 flex flex-col gap-gutter">
+<div class="glass-card rounded-xl p-8">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant mb-6">ABOUT ME</h4>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-4 font-body-md text-on-background focus:ring-1 focus:ring-primary-container focus:border-primary-container outline-none min-h-[240px] custom-scrollbar transition-all" placeholder="Introduce yourself to the network...">I am a multidisciplinary designer specializing in high-contrast digital environments. My work merges technical precision with editorial aesthetics, creating seamless experiences for enterprise-scale admin panels. Currently exploring the intersection of generative AI and design systems.</textarea>
+<p class="text-[11px] text-on-surface-variant font-label-caps mt-3">245 / 500 CHARACTERS USED</p>
+</div>
+<div class="glass-card rounded-xl p-8">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant mb-6">PERSONAL DETAILS</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-[10px] text-on-surface-variant ml-1">FULL NAME</label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:border-primary-container outline-none" type="text" value="A. Ahmad"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-[10px] text-on-surface-variant ml-1">EMAIL ADDRESS</label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md focus:border-primary-container outline-none" type="email" value="ahmad@void-admin.io"/>
+</div>
+</div>
+</div>
+<!-- Save Action -->
+<div class="flex items-center justify-end gap-4 mt-4">
+<button class="px-8 py-4 text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps">
+                        DISCARD
+                    </button>
+<button class="px-10 py-4 bg-primary-container text-on-primary-container font-label-caps text-label-caps rounded-lg hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(0,255,170,0.2)]">
+                        SAVE CHANGES
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 py-4 bg-surface-container/90 backdrop-blur-xl border-t border-white/5 shadow-[0_-4px_24px_rgba(0,255,170,0.1)] rounded-t-full">
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">work</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">psychology</span>
+</a>
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">inbox</span>
+</a>
+<a class="flex items-center justify-center bg-primary-container text-on-primary-container rounded-full w-12 h-12 shadow-[0_0_15px_rgba(0,255,170,0.3)] active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+</a>
+</nav>
+<script>
+        // Interactive Toggle Logic
+        const toggle = document.getElementById('work-toggle');
+        const badge = document.getElementById('status-badge');
+        const label = document.getElementById('toggle-label');
+
+        toggle.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                badge.innerText = 'AVAILABLE';
+                badge.className = 'px-3 py-1 rounded-full bg-primary-container/10 text-primary-fixed-dim font-label-caps text-[10px] mint-glow';
+                label.innerText = 'Available for work';
+                label.className = 'font-body-md text-primary group-hover:text-primary-container transition-colors';
+            } else {
+                badge.innerText = 'BUSY';
+                badge.className = 'px-3 py-1 rounded-full bg-error-container/20 text-error font-label-caps text-[10px]';
+                label.innerText = 'Currently busy';
+                label.className = 'font-body-md text-on-surface-variant group-hover:text-error transition-colors';
+            }
+        });
+
+        // Hover atmosphere for cards
+        const cards = document.querySelectorAll('.glass-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>
