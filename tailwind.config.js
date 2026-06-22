@@ -8,103 +8,95 @@ export default {
   theme: {
     extend: {
       colors: {
+        /* ── Neon Forge palette ── */
+        background: "#0a0a0a",
+        foreground: "#ffffff",
+        mint: "#00FFAA",
+        "cyan-glow": "#00D4FF",
+        surface: "rgba(255,255,255,0.04)",
+        "surface-2": "rgba(255,255,255,0.07)",
+        card: "#121212",
+        "card-foreground": "#ffffff",
+        muted: "#1e1e1e",
+        "muted-foreground": "#8a99a5",
+        primary: "#00FFAA",
+        "primary-foreground": "#0a0a0a",
+        destructive: "#ff5555",
+        "destructive-foreground": "#ffffff",
+        border: "rgba(255,255,255,0.08)",
+        input: "rgba(255,255,255,0.10)",
+        ring: "#00FFAA",
+
+        /* ── Legacy admin colors (kept for admin panel) ── */
         "on-error-container": "#ffdad6",
-        "primary-container": "#4ecf9a", // Match portfolio primary
+        "primary-container": "#4ecf9a",
         "surface-bright": "#3a3939",
-        "primary-fixed-dim": "#4ecf9a", // Match portfolio primary
         "error": "#ffb4ab",
-        "on-primary-fixed": "#002112",
-        "on-tertiary-fixed-variant": "#474746",
-        "primary-fixed": "#4ecf9a", // Match portfolio primary
-        "on-primary-fixed-variant": "#005233",
-        "outline": "#607a70", // Match portfolio muted
-        "on-background": "#edf7f3", // Match portfolio foreground
-        "on-primary-container": "#080808", // Match portfolio primaryFg
-        "background": "#080808", // Match portfolio bg
-        "on-primary": "#080808", // Match portfolio primaryFg
+        "outline": "#607a70",
+        "on-background": "#edf7f3",
+        "on-primary-container": "#080808",
+        "on-primary": "#080808",
         "error-container": "#93000a",
         "surface-container-highest": "#353534",
-        "surface-dim": "#080808", // Match portfolio bg
-        "on-surface": "#edf7f3", // Match portfolio foreground
-        "inverse-on-surface": "#313030",
-        "secondary-container": "#161616", // Match portfolio secondary
-        "on-tertiary-fixed": "#1c1b1b",
-        "tertiary-fixed": "#edf7f3", // Match portfolio foreground
-        "primary": "#4ecf9a", // Match portfolio primary
-        "on-secondary-fixed": "#002021",
-        "tertiary-container": "#e2dfdf",
+        "surface-dim": "#080808",
+        "on-surface": "#edf7f3",
+        "secondary-container": "#161616",
         "secondary": "#9ecfd1",
-        "inverse-primary": "#006c46",
-        "on-secondary-fixed-variant": "#1a4e50",
-        "tertiary-fixed-dim": "#c8c6c5",
         "surface-container-high": "#2a2a2a",
-        "on-tertiary": "#313030",
-        "surface": "#101010", // Match portfolio card
-        "inverse-surface": "#edf7f3", // Match portfolio foreground
-        "on-tertiary-container": "#636262",
-        "surface-tint": "#4ecf9a", // Match portfolio primary
-        "on-secondary-container": "#8dbec0",
-        "on-secondary": "#003739",
-        "surface-variant": "#161616", // Match portfolio secondary
-        "on-surface-variant": "#607a70", // Match portfolio muted
-        "on-error": "#690005",
-        "surface-container": "#161616", // Match portfolio secondary
+        "surface-container": "#161616",
         "outline-variant": "#3a4a40",
-        "secondary-fixed-dim": "#9ecfd1",
-        "secondary-fixed": "#b9ecee",
-        "surface-container-low": "#101010", // Match portfolio card
-        "tertiary": "#fffcfb",
-        "surface-container-lowest": "#080808" // Match portfolio bg
-      },
-      borderRadius: {
-        "DEFAULT": "0.125rem",
-        "lg": "0.25rem",
-        "xl": "0.5rem",
-        "full": "0.75rem"
-      },
-      spacing: {
-        "container-padding-desktop": "40px",
-        "stack-sm": "12px",
-        "container-padding-mobile": "20px",
-        "stack-lg": "48px",
-        "stack-md": "24px",
-        "base": "8px",
-        "gutter": "16px"
+        "surface-container-low": "#101010",
+        "surface-container-lowest": "#080808",
       },
       fontFamily: {
+        display: ['"Orbitron"', '"Space Grotesk"', 'sans-serif'],
+        sans: ['"Rajdhani"', '"Inter"', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        /* Legacy admin fonts */
         "headline-md": ["Libre Caslon Text", "serif"],
         "headline-sm": ["Inter", "sans-serif"],
         "body-lg": ["Inter", "sans-serif"],
-        "body-md": ["Inter", "sans-serif"],
-        "label-caps": ["Inter", "sans-serif"],
-        "display-lg-mobile": ["Libre Caslon Text", "serif"],
-        "display-lg": ["Libre Caslon Text", "serif"],
-        geist: ["Geist", "sans-serif"],
         inter: ["Inter", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
       },
-      fontSize: {
-        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
-        "headline-sm": ["20px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600"}],
-        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "700"}],
-        "display-lg-mobile": ["40px", {"lineHeight": "1.1", "fontWeight": "400"}],
-        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}]
+      borderRadius: {
+        DEFAULT: "0.75rem",
+        lg: "0.75rem",
+        xl: "1rem",
+        "2xl": "1.25rem",
+        full: "9999px",
       },
       animation: {
-        "float": "float 6s ease-in-out infinite",
-        "pulse-slow": "pulse 3s ease-in-out infinite",
-        "spin-slow": "spin 3s linear infinite",
+        "float": "float-y 6s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "scan": "scan 4s linear infinite",
+        "spin-slow": "spin-slow 18s linear infinite",
+        "drift": "drift 14s ease-in-out infinite",
       },
       keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-20px)" },
+        "float-y": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-14px)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { boxShadow: "0 0 16px rgba(0,255,170,0.4), 0 0 40px rgba(0,255,170,0.2)" },
+          "50%": { boxShadow: "0 0 28px rgba(0,255,170,0.7), 0 0 80px rgba(0,255,170,0.4)" },
+        },
+        "scan": {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(200%)" },
+        },
+        "spin-slow": {
+          to: { transform: "rotate(360deg)" },
+        },
+        "drift": {
+          "0%": { transform: "translate(0,0)" },
+          "50%": { transform: "translate(20px,-30px)" },
+          "100%": { transform: "translate(0,0)" },
         },
       },
       backgroundImage: {
         "hero-glow": "radial-gradient(circle at 50% 50%, rgba(0, 255, 170, 0.15) 0%, rgba(19, 19, 19, 0) 70%)",
+        "grad-neon": "linear-gradient(135deg, #00FFAA 0%, #00D4FF 100%)",
       },
     },
   },

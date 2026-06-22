@@ -11,6 +11,7 @@ import AdminLayout from './admin/AdminLayout'
 import AdminDashboard from './admin/AdminDashboard'
 import AdminProjects from './admin/AdminProjects'
 import AdminSkills from './admin/AdminSkills'
+import AdminExperience from './admin/AdminExperience'
 import AdminAbout from './admin/AdminAbout'
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
               <Route path="dashboard" element={<AdminDashboard />} />
               <Route path="projects" element={<AdminProjects />} />
               <Route path="skills" element={<AdminSkills />} />
+              <Route path="journey" element={<AdminExperience />} />
               <Route path="about" element={<AdminAbout />} />
             </Route>
 

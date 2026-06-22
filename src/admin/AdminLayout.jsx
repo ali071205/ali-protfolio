@@ -6,6 +6,7 @@ const adminNav = [
   { path: '/admin/dashboard', label: 'Dashboard', icon: 'dashboard' },
   { path: '/admin/projects', label: 'Projects', icon: 'work' },
   { path: '/admin/skills', label: 'Skills', icon: 'psychology' },
+  { path: '/admin/journey', label: 'Journey', icon: 'route' },
   { path: '/admin/about', label: 'About', icon: 'person' },
 ]
 

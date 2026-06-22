@@ -162,6 +162,13 @@ export function DataProvider({ children }) {
     return newExp
   }
 
+  const updateExperience = async (id, updates) => {
+    const updated = experience.map(e => e.id === id ? { ...e, ...updates } : e)
+    setExperience(updated)
+    saveToStorage('portfolio_experience', updated)
+    return updated.find(e => e.id === id)
+  }
+
   const deleteExperience = async (id) => {
     const updated = experience.filter(e => e.id !== id)
     setExperience(updated)
@@ -184,7 +191,7 @@ export function DataProvider({ children }) {
       addProject, updateProject, deleteProject,
       addSkill, updateSkill, deleteSkill,
       updateAbout,
-      addExperience, deleteExperience,
+      addExperience, updateExperience, deleteExperience,
       sendMessage,
     }}>
       {children}
