@@ -8,6 +8,7 @@ const adminNav = [
   { path: '/admin/skills', label: 'Skills', icon: 'psychology' },
   { path: '/admin/journey', label: 'Journey', icon: 'route' },
   { path: '/admin/about', label: 'About', icon: 'person' },
+  { path: '/admin/trophies', label: 'Trophies', icon: 'emoji_events' },
 ]
 
 export default function AdminLayout() {

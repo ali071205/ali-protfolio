@@ -13,6 +13,7 @@ import AdminProjects from './admin/AdminProjects'
 import AdminSkills from './admin/AdminSkills'
 import AdminExperience from './admin/AdminExperience'
 import AdminAbout from './admin/AdminAbout'
+import AdminTrophies from './admin/AdminTrophies'
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
               <Route path="skills" element={<AdminSkills />} />
               <Route path="journey" element={<AdminExperience />} />
               <Route path="about" element={<AdminAbout />} />
+              <Route path="trophies" element={<AdminTrophies />} />
             </Route>
 
             {/* ── 404 ── */}

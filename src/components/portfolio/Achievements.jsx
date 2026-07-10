@@ -1,21 +1,31 @@
 import { Award, Crown, Medal, Shield, Star, Trophy, Zap } from "lucide-react";
 import { Header } from "./Journey";
 
-const trophies = [
-  { icon: Trophy, name: "First Game Shipped", rarity: "Legendary", color: "mint", desc: "Released debut indie title to public." },
-  { icon: Crown, name: "Studio Founder", rarity: "Mythic", color: "cyan-glow", desc: "Founded a game studio with a 4-person team." },
-  { icon: Medal, name: "100k Users Served", rarity: "Epic", color: "mint", desc: "Built platforms used by 100k+ unique users." },
-  { icon: Star, name: "5★ Client Rating", rarity: "Rare", color: "cyan-glow", desc: "Maintained perfect rating across 40+ contracts." },
-];
+import { useData } from "../../context/DataContext";
+
+const iconMap = {
+  Trophy: Trophy,
+  Crown: Crown,
+  Medal: Medal,
+  Star: Star,
+  Zap: Zap,
+  Award: Award,
+  Shield: Shield
+};
 
 const rarityTone = {
   Mythic: "text-cyan-glow border-cyan-glow/50",
   Legendary: "text-mint border-mint/50",
   Epic: "text-mint border-mint/40",
   Rare: "text-cyan-glow border-cyan-glow/40",
+  Uncommon: "text-mint border-mint/30",
+  Common: "text-cyan-glow border-cyan-glow/30"
 };
 
 export function Achievements() {
+  const { trophies } = useData();
+  const displayTrophies = trophies && trophies.length > 0 ? trophies : [];
+
   return (
     <section id="achievements" className="relative py-32 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-20 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
@@ -23,8 +33,8 @@ export function Achievements() {
         <Header eyebrow="Trophy Room" title="ACHIEVEMENTS" subtitle="Unlocked milestones, certifications, and bragging rights." />
 
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {trophies.map(function(t, i) {
-            const Icon = t.icon;
+          {displayTrophies.map(function(t, i) {
+            const Icon = iconMap[t.icon] || Trophy;
             const animDelay = (i * 0.25) + "s";
             return (
               <div

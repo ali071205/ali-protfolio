@@ -49,8 +49,8 @@ export default {
         "surface-container-lowest": "#080808",
       },
       fontFamily: {
-        display: ['"Orbitron"', '"Space Grotesk"', 'sans-serif'],
-        sans: ['"Rajdhani"', '"Inter"', 'system-ui', 'sans-serif'],
+        display: ['"Space Grotesk"', 'sans-serif'],
+        sans: ['"Inter"', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
         /* Legacy admin fonts */
         "headline-md": ["Libre Caslon Text", "serif"],

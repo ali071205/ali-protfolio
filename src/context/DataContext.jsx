@@ -38,6 +38,13 @@ const initialSkills = [
   { id: 5, name: "C#", category: "Languages", level: 70, icon: "architecture" }
 ]
 
+const initialTrophies = [
+  { id: 1, icon: "Trophy", name: "First Game Shipped", rarity: "Legendary", color: "mint", desc: "Released debut indie title to public." },
+  { id: 2, icon: "Crown", name: "Studio Founder", rarity: "Mythic", color: "cyan-glow", desc: "Founded a game studio with a 4-person team." },
+  { id: 3, icon: "Medal", name: "100k Users Served", rarity: "Epic", color: "mint", desc: "Built platforms used by 100k+ unique users." },
+  { id: 4, icon: "Star", name: "5★ Client Rating", rarity: "Rare", color: "cyan-glow", desc: "Maintained perfect rating across 40+ contracts." }
+]
+
 const initialExperience = [
   {
     id: 1,
@@ -67,6 +74,7 @@ const initialAbout = {
 export function DataProvider({ children }) {
   const [projects, setProjects] = useState([])
   const [skills, setSkills] = useState([])
+  const [trophies, setTrophies] = useState([])
   const [experience, setExperience] = useState([])
   const [about, setAbout] = useState(null)
   const [messages, setMessages] = useState([])
@@ -77,12 +85,14 @@ export function DataProvider({ children }) {
     const loadData = () => {
       const storedProjects = localStorage.getItem('portfolio_projects')
       const storedSkills = localStorage.getItem('portfolio_skills')
+      const storedTrophies = localStorage.getItem('portfolio_trophies')
       const storedExperience = localStorage.getItem('portfolio_experience')
       const storedAbout = localStorage.getItem('portfolio_about')
       const storedMessages = localStorage.getItem('portfolio_messages')
 
       setProjects(storedProjects ? JSON.parse(storedProjects) : initialProjects)
       setSkills(storedSkills ? JSON.parse(storedSkills) : initialSkills)
+      setTrophies(storedTrophies ? JSON.parse(storedTrophies) : initialTrophies)
       setExperience(storedExperience ? JSON.parse(storedExperience) : initialExperience)
       setAbout(storedAbout ? JSON.parse(storedAbout) : initialAbout)
       setMessages(storedMessages ? JSON.parse(storedMessages) : [])
@@ -145,6 +155,28 @@ export function DataProvider({ children }) {
     saveToStorage('portfolio_skills', updated)
   }
 
+  // Trophies CRUD
+  const addTrophy = async (trophy) => {
+    const newTrophy = { ...trophy, id: Date.now() }
+    const updated = [newTrophy, ...trophies]
+    setTrophies(updated)
+    saveToStorage('portfolio_trophies', updated)
+    return newTrophy
+  }
+
+  const updateTrophy = async (id, updates) => {
+    const updated = trophies.map(t => t.id === id ? { ...t, ...updates } : t)
+    setTrophies(updated)
+    saveToStorage('portfolio_trophies', updated)
+    return updated.find(t => t.id === id)
+  }
+
+  const deleteTrophy = async (id) => {
+    const updated = trophies.filter(t => t.id !== id)
+    setTrophies(updated)
+    saveToStorage('portfolio_trophies', updated)
+  }
+
   // About update
   const updateAbout = async (updates) => {
     const updated = { ...about, ...updates }
@@ -186,10 +218,11 @@ export function DataProvider({ children }) {
 
   return (
     <DataContext.Provider value={{
-      projects, skills, experience, about, messages, loading,
+      projects, skills, trophies, experience, about, messages, loading,
       fetchAll, fetchMessages,
       addProject, updateProject, deleteProject,
       addSkill, updateSkill, deleteSkill,
+      addTrophy, updateTrophy, deleteTrophy,
       updateAbout,
       addExperience, updateExperience, deleteExperience,
       sendMessage,

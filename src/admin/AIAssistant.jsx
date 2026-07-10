@@ -37,7 +37,7 @@ export default function AIAssistant({ contextData = '' }) {
 
     try {
       const history = messages
-        .filter(m => m.role !== 'system')
+        .slice(1) // Skip the first hardcoded greeting message
         .map(m => ({ role: m.role === 'assistant' ? 'model' : 'user', content: m.content }))
 
       const response = await sendGeminiMessage(userMessage, history, contextData)

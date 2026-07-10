@@ -7,24 +7,12 @@ const genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null
 /**
  * Get Gemini model instance
  */
-export function getGeminiModel() {
+export function getGeminiModel(systemContext = '') {
   if (!genAI) {
     throw new Error('Gemini API key not configured. Add VITE_GEMINI_API_KEY to your .env file.')
   }
-  return genAI.getGenerativeModel({ model: 'gemini-flash-latest' })
-}
-
-/**
- * Send a message to Gemini and get a response
- * @param {string} prompt - The user's message
- * @param {Array} history - Chat history [{role, parts}]
- * @param {string} systemContext - Context about the portfolio
- * @returns {Promise<string>} AI response text
- */
-export async function sendGeminiMessage(prompt, history = [], systemContext = '') {
-  const model = getGeminiModel()
-
-  const systemPrompt = `You are an AI assistant for Ali Ahmad Raza Sheikh's developer portfolio admin panel.
+  
+  const systemInstruction = `You are an AI assistant for Ali Ahmad Raza Sheikh's developer portfolio admin panel.
 
 ${systemContext}
 
@@ -47,6 +35,22 @@ You can help with:
 
 Be concise, professional, and helpful. When generating content for the portfolio, make it impressive and professional.`
 
+  return genAI.getGenerativeModel({ 
+    model: 'gemini-3.1-flash-lite',
+    systemInstruction
+  })
+}
+
+/**
+ * Send a message to Gemini and get a response
+ * @param {string} prompt - The user's message
+ * @param {Array} history - Chat history [{role, parts}]
+ * @param {string} systemContext - Context about the portfolio
+ * @returns {Promise<string>} AI response text
+ */
+export async function sendGeminiMessage(prompt, history = [], systemContext = '') {
+  const model = getGeminiModel(systemContext)
+
   try {
     const chat = model.startChat({
       history: history.map(msg => ({
@@ -55,11 +59,7 @@ Be concise, professional, and helpful. When generating content for the portfolio
       })),
     })
 
-    const fullPrompt = history.length === 0
-      ? `${systemPrompt}\n\nUser: ${prompt}`
-      : prompt
-
-    const result = await chat.sendMessage(fullPrompt)
+    const result = await chat.sendMessage(prompt)
     return result.response.text()
   } catch (error) {
     console.error('Gemini API error:', error)
