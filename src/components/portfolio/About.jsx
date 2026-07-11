@@ -48,7 +48,7 @@ export function About() {
                   }}
                 />
                 <img
-                  src="/profile.jpg"
+                  src={about?.profile_image || '/profile.jpg'}
                   alt="Profile"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
