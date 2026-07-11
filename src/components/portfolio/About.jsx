@@ -48,9 +48,9 @@ export function About() {
                   }}
                 />
                 <img
-                  src={about?.profile_image || '/profile.jpg'}
-                  alt="Profile"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  src="/profile.jpg"
+                  alt="Ali Ahmad - Profile"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
                 />
                 <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/90 to-transparent">
                   <div className="text-xs uppercase tracking-[0.3em] text-mint">Class</div>
