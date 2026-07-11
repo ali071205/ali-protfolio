@@ -47,20 +47,11 @@ export function About() {
                       "radial-gradient(circle at 50% 40%, rgba(0,255,170,0.4), transparent 60%), radial-gradient(circle at 80% 90%, rgba(0,212,255,0.5), transparent 60%)",
                   }}
                 />
-                {about?.profile_image ? (
-                  <img src={about.profile_image} alt="Profile" className="absolute inset-0 w-full h-full object-cover" />
-                ) : (
-                  <svg viewBox="0 0 200 250" className="absolute inset-0 h-full w-full">
-                    <defs>
-                      <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-                        <stop offset="0" stopColor="#00FFAA" />
-                        <stop offset="1" stopColor="#00D4FF" />
-                      </linearGradient>
-                    </defs>
-                    <circle cx="100" cy="90" r="38" fill="url(#g)" opacity="0.9" />
-                    <path d="M30 230 C 30 160, 170 160, 170 230 Z" fill="url(#g)" opacity="0.85" />
-                  </svg>
-                )}
+                <img
+                  src={about?.profile_image || '/profile.jpg'}
+                  alt="Profile"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
                 <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/90 to-transparent">
                   <div className="text-xs uppercase tracking-[0.3em] text-mint">Class</div>
                   <div className="font-display text-2xl text-foreground">Full-Stack · Dev</div>
