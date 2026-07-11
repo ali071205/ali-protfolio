@@ -12,10 +12,10 @@ export function DataProvider({ children }) {
   const [messages, setMessages] = useState([])
   const [loading, setLoading] = useState(true)
 
+  // Fetch all static data from Supabase tables
   const fetchAll = async () => {
     try {
       setLoading(true)
-      
       const [
         { data: projectsData },
         { data: skillsData },
@@ -29,7 +29,6 @@ export function DataProvider({ children }) {
         supabase.from('experience').select('*').order('created_at', { ascending: false }),
         supabase.from('about').select('*').single()
       ])
-
       setProjects(projectsData || [])
       setSkills(skillsData || [])
       setTrophies(trophiesData || [])
@@ -42,6 +41,7 @@ export function DataProvider({ children }) {
     }
   }
 
+  // Fetch contact form messages
   const fetchMessages = async () => {
     try {
       const { data } = await supabase.from('messages').select('*').order('created_at', { ascending: false })
@@ -51,11 +51,15 @@ export function DataProvider({ children }) {
     }
   }
 
+  // Load data on component mount
   useEffect(() => {
     fetchAll()
+    fetchMessages()
   }, [])
 
-  // Projects CRUD
+  /*** CRUD Operations ***/
+
+  // Projects
   const addProject = async (project) => {
     const { data, error } = await supabase.from('projects').insert([project]).select()
     if (error) throw error
@@ -66,7 +70,7 @@ export function DataProvider({ children }) {
   const updateProject = async (id, updates) => {
     const { data, error } = await supabase.from('projects').update(updates).eq('id', id).select()
     if (error) throw error
-    setProjects(projects.map(p => p.id === id ? data[0] : p))
+    setProjects(projects.map(p => (p.id === id ? data[0] : p)))
     return data[0]
   }
 
@@ -76,7 +80,7 @@ export function DataProvider({ children }) {
     setProjects(projects.filter(p => p.id !== id))
   }
 
-  // Skills CRUD
+  // Skills
   const addSkill = async (skill) => {
     const { data, error } = await supabase.from('skills').insert([skill]).select()
     if (error) throw error
@@ -87,7 +91,7 @@ export function DataProvider({ children }) {
   const updateSkill = async (id, updates) => {
     const { data, error } = await supabase.from('skills').update(updates).eq('id', id).select()
     if (error) throw error
-    setSkills(skills.map(s => s.id === id ? data[0] : s))
+    setSkills(skills.map(s => (s.id === id ? data[0] : s)))
     return data[0]
   }
 
@@ -97,7 +101,7 @@ export function DataProvider({ children }) {
     setSkills(skills.filter(s => s.id !== id))
   }
 
-  // Trophies CRUD
+  // Trophies
   const addTrophy = async (trophy) => {
     const { data, error } = await supabase.from('trophies').insert([trophy]).select()
     if (error) throw error
@@ -108,7 +112,7 @@ export function DataProvider({ children }) {
   const updateTrophy = async (id, updates) => {
     const { data, error } = await supabase.from('trophies').update(updates).eq('id', id).select()
     if (error) throw error
-    setTrophies(trophies.map(t => t.id === id ? data[0] : t))
+    setTrophies(trophies.map(t => (t.id === id ? data[0] : t)))
     return data[0]
   }
 
@@ -118,19 +122,16 @@ export function DataProvider({ children }) {
     setTrophies(trophies.filter(t => t.id !== id))
   }
 
-  // About update
+  // About (single row table)
   const updateAbout = async (updates) => {
-    let idToUpdate = about?.id || 1
-    const { data, error } = await supabase
-      .from('about')
-      .upsert({ id: idToUpdate, ...updates })
-      .select()
+    const idToUpdate = about?.id || 1
+    const { data, error } = await supabase.from('about').upsert({ id: idToUpdate, ...updates }).select()
     if (error) throw error
     setAbout(data[0])
     return data[0]
   }
 
-  // Experience CRUD
+  // Experience
   const addExperience = async (exp) => {
     const { data, error } = await supabase.from('experience').insert([exp]).select()
     if (error) throw error
@@ -141,7 +142,7 @@ export function DataProvider({ children }) {
   const updateExperience = async (id, updates) => {
     const { data, error } = await supabase.from('experience').update(updates).eq('id', id).select()
     if (error) throw error
-    setExperience(experience.map(e => e.id === id ? data[0] : e))
+    setExperience(experience.map(e => (e.id === id ? data[0] : e)))
     return data[0]
   }
 
@@ -151,7 +152,7 @@ export function DataProvider({ children }) {
     setExperience(experience.filter(e => e.id !== id))
   }
 
-  // Send message (contact form)
+  // Messages (contact form)
   const sendMessage = async (msgData) => {
     const { data, error } = await supabase.from('messages').insert([msgData]).select()
     if (error) throw error
@@ -160,16 +161,33 @@ export function DataProvider({ children }) {
   }
 
   return (
-    <DataContext.Provider value={{
-      projects, skills, trophies, experience, about, messages, loading,
-      fetchAll, fetchMessages,
-      addProject, updateProject, deleteProject,
-      addSkill, updateSkill, deleteSkill,
-      addTrophy, updateTrophy, deleteTrophy,
-      updateAbout,
-      addExperience, updateExperience, deleteExperience,
-      sendMessage,
-    }}>
+    <DataContext.Provider
+      value={{
+        projects,
+        skills,
+        trophies,
+        experience,
+        about,
+        messages,
+        loading,
+        fetchAll,
+        fetchMessages,
+        addProject,
+        updateProject,
+        deleteProject,
+        addSkill,
+        updateSkill,
+        deleteSkill,
+        addTrophy,
+        updateTrophy,
+        deleteTrophy,
+        updateAbout,
+        addExperience,
+        updateExperience,
+        deleteExperience,
+        sendMessage,
+      }}
+    >
       {children}
     </DataContext.Provider>
   )
