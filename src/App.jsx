@@ -15,6 +15,7 @@ import { lazy, Suspense } from 'react'
 const AdminLogin = lazy(() => import('./admin/AdminLogin'))
 const AdminLayout = lazy(() => import('./admin/AdminLayout'))
 const AdminDashboard = lazy(() => import('./admin/AdminDashboard'))
+const AdminBlogs = lazy(() => import('./admin/AdminBlogs'))
 const AdminProjects = lazy(() => import('./admin/AdminProjects'))
 const AdminSkills = lazy(() => import('./admin/AdminSkills'))
 const AdminExperience = lazy(() => import('./admin/AdminExperience'))
@@ -39,6 +40,7 @@ export default function App() {
                 <Route path="/admin" element={<AdminLogin />} />
                 <Route path="/admin" element={<AdminLayout />}>
                   <Route path="dashboard" element={<AdminDashboard />} />
+                  <Route path="blogs" element={<AdminBlogs />} />
                   <Route path="projects" element={<AdminProjects />} />
                   <Route path="skills" element={<AdminSkills />} />
                   <Route path="journey" element={<AdminExperience />} />

@@ -31,7 +31,7 @@ export default function BlogPost() {
             <span key={tag} className="px-3 py-1 bg-white/5 rounded-full text-sm text-cyan-glow">{tag}</span>
           ))}
         </div>
-        {blog.image_url && <img src={blog.image_url} alt={blog.title} className="w-full rounded-2xl mb-12 border border-white/10" />}
+        {blog.image_url && <img src={blog.image_url} alt={blog.title} className="w-full h-64 md:h-96 object-cover rounded-2xl mb-12 border border-white/10" />}
         
         {/* Simple markdown render (in production you might use react-markdown) */}
         <div className="prose prose-invert prose-mint max-w-none whitespace-pre-line leading-relaxed text-lg">

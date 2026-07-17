@@ -4,6 +4,7 @@ import { generateProjectDescription, isGeminiConfigured } from '../lib/gemini'
 
 const EMPTY_FORM = {
   name: '',
+  slug: '',
   description: '',
   tech_stack: '',
   github_url: '',
@@ -32,7 +33,13 @@ export default function AdminProjects() {
 
   const handleChange = e => {
     const { name, value, type, checked } = e.target
-    setForm(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }))
+    setForm(prev => {
+      const next = { ...prev, [name]: type === 'checkbox' ? checked : value }
+      if (name === 'name' && !editId) {
+        next.slug = value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')
+      }
+      return next
+    })
   }
 
   const handleEdit = project => {
@@ -148,6 +155,11 @@ export default function AdminProjects() {
             </div>
 
             <div className="space-y-3 mint-border-glow rounded-lg">
+              <label className="block font-label-caps text-xs text-on-surface-variant uppercase tracking-widest">URL Slug *</label>
+              <input name="slug" value={form.slug || ''} onChange={handleChange} required className="form-input bg-background/50 focus:bg-background" placeholder="project-url-slug" />
+            </div>
+
+            <div className="md:col-span-2 space-y-3 mint-border-glow rounded-lg">
               <label className="block font-label-caps text-xs text-on-surface-variant uppercase tracking-widest">Category</label>
               <select name="category" value={form.category} onChange={handleChange} className="form-input bg-background/50 focus:bg-background text-on-surface">
                 {CATEGORIES.map(c => <option key={c} value={c} className="bg-surface-container text-on-surface">{c}</option>)}

@@ -164,6 +164,33 @@ export function DataProvider({ children }) {
     return data[0]
   }
 
+  // Blogs
+  const addBlog = async (blog) => {
+    const { data, error } = await supabase.from('blogs').insert([blog]).select()
+    if (error) throw error
+    if (data && data.length > 0) {
+      setBlogs([data[0], ...blogs])
+      return data[0]
+    } else {
+      // Fallback if RLS blocks select()
+      fetchAll()
+      return blog
+    }
+  }
+
+  const updateBlog = async (id, updates) => {
+    const { data, error } = await supabase.from('blogs').update(updates).eq('id', id).select()
+    if (error) throw error
+    setBlogs(blogs.map(b => (b.id === id ? data[0] : b)))
+    return data[0]
+  }
+
+  const deleteBlog = async (id) => {
+    const { error } = await supabase.from('blogs').delete().eq('id', id)
+    if (error) throw error
+    setBlogs(blogs.filter(b => b.id !== id))
+  }
+
   return (
     <DataContext.Provider
       value={{
@@ -180,6 +207,9 @@ export function DataProvider({ children }) {
         addProject,
         updateProject,
         deleteProject,
+        addBlog,
+        updateBlog,
+        deleteBlog,
         addSkill,
         updateSkill,
         deleteSkill,

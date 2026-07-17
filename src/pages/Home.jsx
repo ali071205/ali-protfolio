@@ -5,6 +5,7 @@ import { SkillsTree } from "../components/portfolio/SkillsTree";
 import { Projects } from "../components/portfolio/Projects";
 import { Achievements } from "../components/portfolio/Achievements";
 import { About } from "../components/portfolio/About";
+import { LatestBlogs } from "../components/portfolio/LatestBlogs";
 import { Contact } from "../components/portfolio/Contact";
 import { Footer } from "../components/portfolio/Footer";
 
@@ -27,6 +28,7 @@ export default function Home() {
         <Projects />
         <Achievements />
         <About />
+        <LatestBlogs />
         <Contact />
       </main>
       <Footer />
