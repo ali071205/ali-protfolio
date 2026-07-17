@@ -51,6 +51,8 @@ export function About() {
                   src="/profile.jpg"
                   alt="Ali Ahmad - Profile"
                   className="absolute inset-0 w-full h-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/90 to-transparent">
                   <div className="text-xs uppercase tracking-[0.3em] text-mint">Class</div>
@@ -64,7 +66,7 @@ export function About() {
           {/* Bio + contact */}
           <div className="lg:col-span-7 space-y-8">
             <div className="glass-strong rounded-2xl p-7 space-y-4">
-              <h3 className="font-display text-2xl text-gradient-neon">Hey, I'm Ali Ahmad.</h3>
+              <h3 className="font-display text-2xl text-gradient-neon">Hey, I'm Ali Ahmad, Full Stack & React Developer.</h3>
               <p className="text-muted-foreground whitespace-pre-line">{bio}</p>
               <div className="grid sm:grid-cols-2 gap-3 pt-2">
                 {[

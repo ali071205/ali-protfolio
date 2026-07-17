@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /admin
 
 Sitemap: https://ali-portfolio-brown-tau.vercel.app/sitemap.xml

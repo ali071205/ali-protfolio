@@ -10,6 +10,7 @@ export function DataProvider({ children }) {
   const [experience, setExperience] = useState([])
   const [about, setAbout] = useState(null)
   const [messages, setMessages] = useState([])
+  const [blogs, setBlogs] = useState([])
   const [loading, setLoading] = useState(true)
 
   // Fetch all static data from Supabase tables
@@ -21,15 +22,18 @@ export function DataProvider({ children }) {
         { data: skillsData },
         { data: trophiesData },
         { data: experienceData },
-        { data: aboutData }
+        { data: aboutData },
+        { data: blogsData }
       ] = await Promise.all([
         supabase.from('projects').select('*').order('created_at', { ascending: false }),
         supabase.from('skills').select('*').order('id', { ascending: true }),
         supabase.from('trophies').select('*').order('id', { ascending: true }),
         supabase.from('experience').select('*').order('created_at', { ascending: false }),
-        supabase.from('about').select('*').single()
+        supabase.from('about').select('*').single(),
+        supabase.from('blogs').select('*').order('created_at', { ascending: false })
       ])
       setProjects(projectsData || [])
+      setBlogs(blogsData || [])
       setSkills(skillsData || [])
       setTrophies(trophiesData || [])
       setExperience(experienceData || [])
@@ -164,6 +168,7 @@ export function DataProvider({ children }) {
     <DataContext.Provider
       value={{
         projects,
+        blogs,
         skills,
         trophies,
         experience,
